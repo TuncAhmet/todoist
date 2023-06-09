@@ -5,8 +5,7 @@ import {
   SafeAreaView,
   TextInput,
   Pressable,
-  FlatList,
-  TouchableOpacity
+  FlatList
 } from 'react-native'
 import React, { useState } from 'react'
 
