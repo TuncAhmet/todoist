@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8d060997-49c3-4f3b-bb42-aa7f11a62f84"
+      }
+    },
+    "owner": "tunchahmet"
   }
 }
