@@ -20,14 +20,16 @@ const Home = () => {
     <View style={styles.todo}>
       <Text style={styles.todoTitle}>{item.title}</Text>
       <Text style={styles.todoDesc}>{item.desc}</Text>
+      {/* <Text>{item.id}</Text> */}
     </View>
   )
 
   const onPressHandle = () => {
-    if (todoName) {
+    if ((todoName, todoDesc)) {
       const todo = {
         title: todoName,
-        desc: todoDesc
+        desc: todoDesc,
+        id: todoList.length
       }
       setTodoList([...todoList, todo])
       setTodoName('')
@@ -54,18 +56,30 @@ const Home = () => {
         </View>
         <View style={styles.buttonArea}>
           <View style={styles.iconArea}>
-            <MaterialCommunityIcons
-              name="timer-outline"
-              size={36}
-              color="black"
-            />
-            <MaterialIcons
-              name="label-important-outline"
-              size={36}
-              color="black"
-            />
+            <Pressable>
+              <MaterialCommunityIcons
+                name="timer-outline"
+                size={44}
+                color="#7b97ea"
+              />
+            </Pressable>
+            <Pressable>
+              <MaterialIcons
+                name="label-important-outline"
+                size={44}
+                color="#7b97ea"
+              />
+            </Pressable>
           </View>
-          <Pressable onPress={onPressHandle} style={styles.pressable}>
+          <Pressable
+            android_ripple={{
+              color: 'blue',
+              borderRadius: 50,
+              opacity: 0.5
+            }}
+            onPress={onPressHandle}
+            style={styles.pressable}
+          >
             <Text style={styles.pressableText}>Submit</Text>
           </Pressable>
         </View>
@@ -150,7 +164,8 @@ const styles = StyleSheet.create({
     borderRadius: 8
   },
   pressableText: {
-    color: 'white'
+    color: 'white',
+    fontSize: 20
   },
   todoList: {
     width: '100%',
@@ -160,7 +175,9 @@ const styles = StyleSheet.create({
     paddingBottom: 80,
     // backgroundColor: 'white'
     backgroundColor: '#7b97ea',
-    borderTopWidth: 1
+    borderTopWidth: 1,
+    borderColor: '#7b97ea',
+    flex: 1
   },
   todo: {
     borderWidth: 1,
