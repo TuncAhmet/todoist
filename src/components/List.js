@@ -1,15 +1,17 @@
-import { StyleSheet, View, FlatList } from 'react-native'
 import React, { useContext } from 'react'
+import { StyleSheet, View, FlatList } from 'react-native'
 import { TodoContext } from '../hooks/todoContext'
+import ListItem from './ListItem'
 
 const List = () => {
   const { todoList, renderItem } = useContext(TodoContext)
+
   return (
     <View style={styles.todoList}>
       <FlatList
         data={todoList}
         renderItem={renderItem}
-        keyExtractor={(item, index) => index.toString()}
+        keyExtractor={(item) => item.id.toString()}
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
       />
