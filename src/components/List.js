@@ -30,6 +30,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#7b97ea',
     borderTopWidth: 1,
     borderColor: '#7b97ea',
-    flex: 1
+    flex: 1,
+    maxHeight: '100%',
+    maxWidth: '100%'
   }
 })

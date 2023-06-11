@@ -26,14 +26,14 @@ const Form = () => {
       </View>
       <View style={styles.buttonArea}>
         <View style={styles.iconArea}>
-          <Pressable>
+          <Pressable disabled>
             <MaterialCommunityIcons
               name="timer-outline"
               size={44}
               color="#7b97ea"
             />
           </Pressable>
-          <Pressable>
+          <Pressable disabled>
             <MaterialIcons
               name="label-important-outline"
               size={44}

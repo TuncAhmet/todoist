@@ -22,6 +22,11 @@ export const TodoProvider = ({ children }) => {
       setTodoDesc('')
     }
   }
+
+  const deleteTodo = (id) => {
+    setTodoList(todoList.filter((todo) => todo.id !== id))
+  }
+
   const renderItem = ({ item }) => (
     <ListItem title={item.title} desc={item.desc} id={item.id} />
   )
@@ -34,7 +39,8 @@ export const TodoProvider = ({ children }) => {
     setTodoDesc,
     todoList,
     addTodo,
-    renderItem
+    renderItem,
+    deleteTodo
   }
 
   return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>
